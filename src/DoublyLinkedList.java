@@ -104,10 +104,10 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		T data = tail.data;
 		tail = tail.pre;
 		tail.next = null;
+		size--;
 		
 		//Adjust the head if the linked list is now empty
 		if(isEmpty()) head = null;
-		size--;
 		return data;
 	}
 	
@@ -119,10 +119,10 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		T data = head.data;
 		head = head.next;
 		head.pre = null;
+		size--;
 		
 		//Adjust the head if the linked list is now empty
 		if(isEmpty()) tail = null;
-		size--;
 		return data;
 	}
 	
