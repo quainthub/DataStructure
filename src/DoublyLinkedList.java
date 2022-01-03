@@ -12,8 +12,8 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 	private Node<T> tail = null;
 	
 	private static class Node<T> {
-		T data;
-		Node <T> pre, next;
+		private T data;
+		private Node <T> pre, next;
 		
 		public Node (T data, Node<T> pre, Node<T> next) {
 			this.data = data;
@@ -173,7 +173,7 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		return remove(trav);
 	}
 	
-	 // Remove a particular value in the linked list, O(n)
+	// Remove a particular value in the linked list, O(n)
 	public boolean remove(Object obj) {
 		Node<T> trav = head;
 		
@@ -195,6 +195,7 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		return false;
 	}
 	
+	//Get index of an object. If it doesn't exist return -1
 	public int indexOf(Object obj) {
 		int i = 0;
 		Node<T> trav = head;
@@ -215,6 +216,7 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		return -1;
 	}
 	
+	//Test if linked list contains an object
 	public boolean contians(Object obj) {
 		return indexOf(obj) != -1;
 	}
@@ -252,11 +254,20 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 			newString.append(trav.data.toString()+", ");
 		}
 		
+		newString.append(trav.data.toString());
 		newString.append("]");
 		return newString.toString();
 	}
 	
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DoublyLinkedList<Integer> myLinkedList = new DoublyLinkedList<>();
 		
+		myLinkedList.add(3);
+		myLinkedList.add(7);
+		myLinkedList.removeFirst();
+
+		System.out.println(myLinkedList.toString());
+		System.out.println(myLinkedList.head);
 	}
 }
