@@ -25,7 +25,7 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 		}
 	}
 	
-	//Clear this linked list Time: O(n) starting from the head
+	//Clear this linked list starting from the head Time: O(n) 
 	public void clear() {
 		Node<T> trav = head;
 		while (trav != null) {
@@ -35,6 +35,10 @@ public class DoublyLinkedList <T> implements Iterable<T>{
 			trav.data= null;
 			trav = next;
 		}
+		head = null;
+		tail = null;
+		trav = null;
+		size = 0;
 	}
 	
 	//Return size of the linked list
