@@ -22,7 +22,7 @@ public class Stack<T> implements Iterable<T>{
 	
 	//Add a new element to the top
 	public void push(T element) {
-		list.add(element);
+		list.addLast(element);
 	}
 
 	//Pop element from the top
